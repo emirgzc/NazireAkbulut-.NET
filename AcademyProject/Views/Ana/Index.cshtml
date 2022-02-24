@@ -1,0 +1,39 @@
+﻿
+
+@model IEnumerable<EntityLayer.Concrete.Slider>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_AnaLayout.cshtml";
+}
+
+<section id="hero">
+	<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+		<div class="carousel-inner" role="listbox">
+
+			<!-- Slide 1 -->
+
+
+			@foreach (var item in Model)
+			{
+				<div class="carousel-item active" style="background-image: url(@item.Image); background-position:center;">
+					<div class="carousel-container">
+						<div class="carousel-content animate__animated animate__fadeInUp">
+							<h2>@item.SliderTitle</h2>
+							<p>@item.SliderDesc</p>
+						</div>
+					</div>
+				</div>
+			}
+
+
+
+		</div>
+
+	</div>
+</section>
+
+
+
+

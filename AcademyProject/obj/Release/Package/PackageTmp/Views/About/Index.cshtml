@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<EntityLayer.Concrete.About>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_AnaLayout.cshtml";
+}
+
+<section id="breadcrumbs" class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Hakkımızda</h2>
+			<ol>
+				<li><a href="/Ana/Index/">Ana Sayfa</a></li>
+				<li>Hakkımızda</li>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs -->
+<!-- ======= About Us Section ======= -->
+<section id="about-us" class="about-us m-3">
+	<div class="container">
+
+		<div class="row no-gutters">
+			<div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right"></div>
+			<div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+				<div class="content d-flex flex-column justify-content-center">
+					@foreach (var item in Model)
+					{
+						<h3 data-aos="fade-up">@item.Title</h3>
+						<p data-aos="fade-up">
+							@Html.Raw(item.Desc)
+						</p>
+					}
+				</div><!-- End .content-->
+			</div>
+		</div>
+
+	</div>
+</section>

@@ -1,0 +1,68 @@
+﻿
+@model IEnumerable<EntityLayer.Concrete.Contact>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_AnaLayout.cshtml";
+}
+
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>İletişim</h2>
+			<ol>
+				<li><a href="/Ana/Index/">Ana Sayfa</a></li>
+				<li>İletişim</li>
+			</ol>
+		</div>
+
+	</div>
+</section>
+
+<section id="contact" class="contact">
+	<div class="container">
+
+		<div class="row justify-content-center" data-aos="fade-up">
+
+			<div class="col-lg-10">
+
+				<img src="~/Flattern/assets/img/xc.jpeg" style="width:100%; height:300px; object-fit:cover;"/>
+
+			</div>
+
+		</div>
+
+		<div class="row mt-5 justify-content-center" data-aos="fade-up">
+			<div class="col-lg-10">
+				@using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "concon" }))
+				{
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<input type="text" name="NameSurname" class="form-control" id="name" placeholder="İsim Soyisim" required maxlength="150">
+						</div>
+						<div class="col-md-6 form-group mt-3 mt-md-0">
+							<input type="email" class="form-control" name="Email" id="email" placeholder="Email Adresi" required maxlength="100">
+						</div>
+					</div>
+					<div class="form-group mt-3">
+						<input type="text" class="form-control" name="Subject" id="subject" placeholder="Konu" required maxlength="300">
+					</div>
+					<div class="form-group mt-3">
+						<textarea class="form-control" name="Message" rows="5" placeholder="Mesajınız" required></textarea>
+					</div>
+					<br />
+					<div id="cf-submit">
+						<input type="submit" id="contact-submit"
+							   class="btn btn-outline-danger" value="Gönder">
+					</div>
+				}
+				</div>
+
+		</div>
+
+	</div>
+
+</section><!-- End Contact Section -->

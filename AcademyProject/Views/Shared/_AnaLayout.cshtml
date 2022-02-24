@@ -1,0 +1,164 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta name="description" content="Nazire Akbulut">
+
+	<meta name="author" content="Nazire Akbulut">
+
+	<title>Nazire Akbulut ©</title>
+
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" type="image/x-icon" href="~/Flattern/assets/img/logo2.jpeg" />
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="~/Flattern/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="~/Flattern/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="~/Flattern/assets/css/style.css" rel="stylesheet">
+
+	<!-- =======================================================
+	* Template Name: Flattern - v4.5.0
+	* Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
+	* Author: BootstrapMade.com
+	* License: https://bootstrapmade.com/license/
+	======================================================== -->
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="d-flex align-items-center">
+		<div class="container d-flex justify-content-between">
+
+			<div class="logo">
+				 <a href="/Ana/Index/"><img src="~/Flattern/assets/img/logo.jpeg" alt="Nazire Akbulut" class="img-fluid" style="width:105px; height:50px; object-fit:cover;"></a>
+			</div>
+
+			<nav id="navbar" class="navbar">
+				<ul>
+					<li><a class="active" href="/Ana/Index/">Ana Sayfa</a></li>
+					<li><a href="/About/Index/">Hakkımızda</a></li>
+					<li class="dropdown">
+						<a href="#"><span>Kariyer</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li class="dropdown">
+								<a href="#"><span>Tez Danışmanlıkları</span> <i class="bi bi-chevron-right"></i></a>
+								<ul>
+									<li><a href="~/Flattern/assets/yuktezdan.pdf" target="_blank">Yüksek Lisans Tez Danışmanlığı</a></li>
+									<li><a href="~/Flattern/assets/doktezdan.pdf" target="_blank">Doktora Tez Danışmanlığı</a></li>
+								</ul>
+							</li>
+							<li><a href="/MesKurUye/Index/">Mesleki Kuruluşlara Üyelikler</a></li>
+							<li>@Html.Action("Index", "SemKonBilDanKurUye")</li>
+							<li><a href="/SemKonBilDanKurUye/YukLisDokJuri/">Yüksek Lisans ve Doktora Jüriliği</a></li>
+							<li><a href="~/Flattern/assets/ceviriler.pdf" target="_blank">Çeviriler</a></li>
+							<li><a href="~/Flattern/assets/digerindeks.pdf" target="_blank">Diğer İndekslerde Yapılan Yayınlar veya <br /> Uluslararası Dergi Yayınları</a></li>
+							<li><a href="~/Flattern/assets/ulushakemdergi.pdf" target="_blank">Ulusal Hakemli Dergiler</a></li>
+							<li><a href="/GazeteDergi/Index/">Gazete ve Dergi Yazıları</a></li>
+							<li>@Html.Action("Index", "YayUlusalBildir")</li>
+							<li>@Html.Action("Index", "YayUluslararsBildir")</li>
+							<li class="dropdown">
+								<a href="#"><span>(Çağrılı) Konuşmacı</span> <i class="bi bi-chevron-right"></i></a>
+								<ul>
+									<li>@Html.Action("Index", "Konusmaci")</li>
+									<li>@Html.Action("Index", "OturumBaskanlik")</li>
+								</ul>
+							</li>
+							<li>@Html.Action("Index", "AcademicCV")</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#"><span>Makaleler</span> <i class="bi bi-chevron-down"></i></a>
+						<ul>
+							<li><a href="/Makaleler/Index/">Makaleler</a></li>
+							<li><a href="/Flattern/assets/semrap.pdf" target="_blank">Sempozyum Raporu</a></li>
+						</ul>
+					</li>
+					<li><a href="/Editor/Index/">Editörlük</a></li>
+					<li>@Html.Action("Index","Atiflar")</li>
+					<li><a href="/Kitap/Index/">Kitaplar veya Kitap Bölümü</a></li>
+
+					<li><a href="/Contact/Index/">İletişim</a></li>
+				</ul>
+				<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav><!-- .navbar -->
+
+		</div>
+	</header><!-- End Header -->
+	<!-- ======= Hero Section ======= -->
+	
+
+	<main id="main">
+
+		@RenderBody()
+		<section id="cta" class="cta">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-lg-9 text-center text-lg-left mt-3">
+						<h3>Her ay <span>1 Güncel Yazı</span> yayınlıyorum.</h3>
+					</div>
+					<div class="col-lg-3 cta-btn-container text-center">
+						<a class="cta-btn align-middle" href="/GuncelYazilar/Index/">Güncel Yazılarım</a>
+					</div>
+				</div>
+
+			</div>
+		</section><!-- End Cta Section -->
+	</main>
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+
+
+		<div class="container d-md-flex py-4">
+
+			<div class="me-md-auto text-center text-md-start">
+				<div class="copyright">
+					2022|<strong><span>Nazire Akbulut &copy;</span></strong>. Tüm Hakları Saklıdır.
+				</div>
+				<div class="credits">
+					<!-- All the links in the footer should remain intact. -->
+					<!-- You can delete the links only if you purchased the pro version. -->
+					<!-- Licensing information: https://bootstrapmade.com/license/ -->
+					<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/ -->
+					Tasarım ve Geliştirme <a href="https://www.linkedin.com/in/muhammed-emir-gozcu/" target="_blank">Emir Gözcü</a>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Vendor JS Files -->
+	<script src="~/Flattern/assets/vendor/aos/aos.js"></script>
+	<script src="~/Flattern/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/Flattern/assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="~/Flattern/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="~/Flattern/assets/vendor/php-email-form/validate.js"></script>
+	<script src="~/Flattern/assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="~/Flattern/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="~/Flattern/assets/js/main.js"></script>
+
+</body>
+
+</html>

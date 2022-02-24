@@ -1,0 +1,36 @@
+﻿
+@model EntityLayer.Concrete.MesKurUye
+
+@{
+	ViewBag.Title = "AAddMesKurUye";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-xl-12 col-xxl-12">
+	<div class="card">
+		<div class="card-header">
+			<h4 class="card-title">Meslek Kuruluşlara Üyelikler Ekleme</h4>
+		</div>
+		<div class="card-body">
+			<div class="basic-form">
+				@using (Html.BeginForm("AAddMesKurUye", "MesKurUye", FormMethod.Post))
+				{
+				<div class="form-group">
+					<label>Başlık</label>
+					<textarea type="text" name="Title" id="editorid" required="" class="form-control input-default"></textarea>
+					@Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+				</div>
+					<button type="submit" class="btn btn-primary">Ekle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts{
+	<script src="~/mazer/dist/assets/vendors/ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace("editorid")
+	</script>
+}

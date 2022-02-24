@@ -1,0 +1,30 @@
+﻿
+@model EntityLayer.Concrete.SemKonBilDanKurUye
+
+@{
+	ViewBag.Title = "ASemKonBilDanKurUyeUpdate";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Sempozyum veya Kongre Bilim ve/veya Danışma Kurulu Üyesi Güncelleme</h4>
+			<div class="basic-form">
+				@using (Html.BeginForm("ASemKonBilDanKurUyeUpdate", "SemKonBilDanKurUye", FormMethod.Post, new { enctype = "multipart/form-data" }))
+				{
+					@Html.HiddenFor(x => x.SemID)
+					<div class="form-group">
+						<label>Dosya</label>
+						<input type="file" name="File" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-dark">Güncelle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

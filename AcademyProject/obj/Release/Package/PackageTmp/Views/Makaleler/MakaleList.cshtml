@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<EntityLayer.Concrete.Makale>
+
+@{
+	ViewBag.Title = "MakaleList";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+	<a class="btn btn-info mb-3" href="/Makaleler/AAddMakale/">Yeni Makale</a>
+	<div class="card">
+		<div class="card-body">
+			<div class="card-title">
+				<h4>Makale</h4>
+			</div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Title</th>
+							<th>Tarih</th>
+							<th>Sil</th>
+							<th>Güncelle</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<th>@item.MakaleID</th>
+								<td>@Html.Raw(item.MakaleTitle)</td>
+								<td>@item.MakaleDate.ToString("d MMMMM yyy")</td>
+								<td><a href="/Makaleler/AMakaleDelete/@item.MakaleID" class="btn btn-danger">Sil</a></td>
+								<td><a href="/Makaleler/AMakaleUpdate/@item.MakaleID" class="btn btn-outline-success">Güncelle</a></td>
+
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+

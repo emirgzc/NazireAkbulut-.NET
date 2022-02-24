@@ -1,0 +1,27 @@
+﻿
+@model EntityLayer.Concrete.YayUlusalBildir
+
+@{
+	ViewBag.Title = "AYayUlusalBildirUpdate";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">(YAYINLANMIŞ) ULUSAL BİLDİRİLER Güncelleme</h4>
+			<div class="basic-form">
+				@using (Html.BeginForm("AYayUlusalBildirUpdate", "YayUlusalBildir", FormMethod.Post, new { enctype = "multipart/form-data" }))
+				{
+					@Html.HiddenFor(x => x.YayUlusalBildirID)
+					<div class="form-group">
+						<label>Dosya</label>
+						<input type="file" name="File" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-dark">Güncelle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<EntityLayer.Concrete.GazeteDergi>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_AnaLayout.cshtml";
+}
+
+<section id="breadcrumbs" class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Gazete ve Dergi</h2>
+			<ol>
+				<li><a href="/Ana/Index/">Ana Sayfa</a></li>
+				<li>Gazete ve Dergi</li>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs -->
+<!-- ======= About Us Section ======= -->
+<section id="testimonials" class="testimonials">
+	<div class="container">
+
+		<div class="row">
+
+			@foreach (var item in Model)
+			{
+				<div class="col-lg-4 mb-2" data-aos="fade-up">
+					<div class="testimonial-item">
+						<p>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+							@Html.Raw(item.Title)
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+						</p>
+					</div>
+				</div>
+			}
+		</div>
+
+	</div>
+</section><!-- End Testimonials Section -->

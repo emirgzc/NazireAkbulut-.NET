@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<EntityLayer.Concrete.Editorluk>
+
+@{
+	ViewBag.Title = "EditorDetails";
+	Layout = "~/Views/Shared/_AnaLayout.cshtml";
+}
+
+<section id="breadcrumbs" class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Editör Detay</h2>
+			<ol>
+				<li><a href="/Ana/Index/">Ana Sayfa</a></li>
+				<li>Editör Detay</li>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs -->
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+	<div class="container">
+
+		<div class="row gy-4">
+
+			@foreach (var item in Model)
+			{
+				<div class="col-lg-5">
+					<div class="portfolio-details-slider swiper">
+						<img src="@item.EditImage" alt="@item.EditTitle" style="width: 100%; height: 450px; object-fit: cover;">
+					</div>
+				</div>
+
+				<div class="col-lg-7">
+
+					<div class="portfolio-description">
+						<h2>@item.EditTitle</h2>
+						<p>@Html.Raw(item.EditDesc)</p>
+					</div>
+				</div>
+			}
+
+		</div>
+
+	</div>
+</section><!-- End Portfolio Details Section -->

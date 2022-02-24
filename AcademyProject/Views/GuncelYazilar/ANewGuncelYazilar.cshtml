@@ -1,0 +1,24 @@
+﻿
+@model EntityLayer.Concrete.GuncelYazilar
+
+@{
+	ViewBag.Title = "ANewGuncelYazilar";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("ANewGuncelYazilar", "GuncelYazilar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<span class="text-danger">(Lütfen 3Mb' dan Yüksek Resim Yükleme Yapmayınız!)</span>
+	<div class="form-group">
+		@Html.Label("Başlık")
+		@Html.TextBoxFor(x => x.Title, new { @class = "form-control", @required = "@required" })
+		@Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+		
+		<br />
+		@Html.Label("File")
+		<input type="file" name="File" class="form-control" required="">
+		<br />
+		<button class="btn btn-primary">Ekle</button>
+	</div>
+}
+

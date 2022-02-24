@@ -1,0 +1,27 @@
+﻿
+@model EntityLayer.Concrete.Atiflar
+
+@{
+	ViewBag.Title = "AAtiflarUpdate";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Blog Güncelleme</h4>
+			<div class="basic-form">
+				@using (Html.BeginForm("AAtiflarUpdate", "Atiflar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+				{
+					@Html.HiddenFor(x => x.AtiflarID)
+					<div class="form-group">
+						<label>Dosya</label>
+						<input type="file" name="File" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-dark">Güncelle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+

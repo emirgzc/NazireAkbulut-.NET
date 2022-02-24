@@ -1,0 +1,20 @@
+﻿
+@model EntityLayer.Concrete.Atiflar
+
+@{
+	ViewBag.Title = "ANewBlog";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("ANewBlog", "Atiflar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<span class="text-danger">(Lütfen 3Mb' dan Yüksek Resim Yükleme Yapmayınız!)</span>
+	<div class="form-group">
+		
+		@Html.Label("Resim")
+		<input type="file" name="File" class="form-control" required="">
+		<br />
+		<button class="btn btn-primary">Ekle</button>
+	</div>
+}
+

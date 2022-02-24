@@ -1,0 +1,49 @@
+﻿
+@model EntityLayer.Concrete.Makale
+
+@{
+	ViewBag.Title = "AMakaleUpdate";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-xl-12 col-xxl-12">
+	<div class="card">
+		<div class="card-header">
+			<h4 class="card-title">Makale Bilgileri Güncelleme</h4>
+		</div>
+		<div class="card-body">
+			<div class="basic-form">
+				@using (Html.BeginForm("AMakaleUpdate", "Makaleler", FormMethod.Post))
+				{
+					@Html.HiddenFor(x => x.MakaleID, new { @class = "form-control input-default" })
+				<div class="form-group">
+					@Html.Label("Title")
+					@Html.TextAreaFor(x => x.MakaleTitle, 8, 20, new { @class = "form-control", @id = "editorid"})
+					@Html.ValidationMessageFor(x => x.MakaleTitle, "", new { @class = "text-danger" })
+				</div>
+					<br />
+					<div class="form-group">
+						@Html.Label("İçerik")
+						@Html.TextAreaFor(x => x.MakaleDesc, 8, 20, new { @class = "form-control", @id = "editorid2" })
+						@Html.ValidationMessageFor(x => x.MakaleDesc, "", new { @class = "text-danger" })
+					</div>
+					<button type="submit" class="btn btn-primary">Güncelle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+@section Scripts{
+	<script src="~/mazer/dist/assets/vendors/ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace("editorid")
+	</script>
+
+	<script src="~/mazer/dist/assets/vendors/ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace("editorid2")
+	</script>
+}

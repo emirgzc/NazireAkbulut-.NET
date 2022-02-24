@@ -1,0 +1,39 @@
+﻿
+@model EntityLayer.Concrete.MesKurUye
+
+@{
+	ViewBag.Title = "AMesKurUyeUpdate";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-xl-12 col-xxl-12">
+	<div class="card">
+		<div class="card-header">
+			<h4 class="card-title">Meslek Kuruluşlara Üyelikler Bilgileri Güncelleme</h4>
+		</div>
+		<div class="card-body">
+			<div class="basic-form">
+				@using (Html.BeginForm("AMesKurUyeUpdate", "MesKurUye", FormMethod.Post))
+				{
+					@Html.HiddenFor(x => x.MesKurId, new { @class = "form-control input-default" })
+					<div class="form-group">
+						@Html.Label("Title")
+						@Html.TextAreaFor(x => x.Title, 8, 20, new { @class = "form-control", @id = "editorid" })
+						@Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+					</div>
+					<button type="submit" class="btn btn-primary">Güncelle</button>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+@section Scripts{
+	<script src="~/mazer/dist/assets/vendors/ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace("editorid")
+	</script>
+}
+
